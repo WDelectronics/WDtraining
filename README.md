@@ -1,2 +1,2 @@
 # WDtraining
-Gym workout log
+Gym workout log, using QML & SQLite

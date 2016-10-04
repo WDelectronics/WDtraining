@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>CalenderClass.qml</file>
+        <file>pieMenuSelect.qml</file>
+        <file>Login.qml</file>
+        <file>LoginForm.ui.qml</file>
+    </qresource>
+</RCC>

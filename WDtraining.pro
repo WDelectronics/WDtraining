@@ -1,4 +1,5 @@
 QT += qml quick sql
+QT += quickcontrols2
 
 !contains(sql-drivers, sqlite): QTPLUGIN += qsqlite
 CONFIG += c++11
@@ -6,7 +7,8 @@ CONFIG += c++11
 SOURCES += main.cpp \
     sqlmanager.cpp
 
-RESOURCES += qml.qrc
+RESOURCES += qml.qrc \
+    resources.qrc
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =

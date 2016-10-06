@@ -5,5 +5,7 @@
         <file>pieMenuSelect.qml</file>
         <file>Login.qml</file>
         <file>LoginForm.ui.qml</file>
+        <file>common/TopToolBar.qml</file>
+        <file>common/TopToolBarForm.ui.qml</file>
     </qresource>
 </RCC>

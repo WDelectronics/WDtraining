@@ -19,16 +19,17 @@ Flickable{
         anchors.topMargin: 0
         anchors.fill: parent
 
-        GridLayout {
-            columnSpacing: 5
-            rowSpacing: 1
-            anchors.rightMargin: 20
-            anchors.leftMargin: 20
-            anchors.bottomMargin: 20
-            anchors.topMargin: 20
+        ColumnLayout {
             anchors.fill: parent
-            rows: 4
-            columns: 1
+
+            Image {
+                id: image1
+                fillMode: Image.PreserveAspectFit
+                Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+                Layout.preferredHeight: 191
+                Layout.preferredWidth: 348
+                source: "qrc:/welcome/Resources/Welcome pic.jpeg"
+            }
 
             Label {
                 id: label1
@@ -45,6 +46,8 @@ Flickable{
             }
 
             RowLayout {
+                Layout.preferredHeight: 50
+                Layout.preferredWidth: 349
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
 
                 ComboBox {
@@ -56,18 +59,18 @@ Flickable{
                 Button {
                     id: loadProfileButton
                     text: qsTr("Load Profile")
-                    Layout.preferredHeight: 40
+                    Layout.preferredHeight: 50
                     Layout.preferredWidth: 147
                 }
             }
 
             RowLayout {
+                Layout.preferredWidth: 349
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
 
                 TextField {
                     id: newProfileTextField
                     text: qsTr("Text Field")
-                    Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                     Layout.preferredHeight: 40
                     Layout.preferredWidth: 185
                 }
@@ -75,12 +78,13 @@ Flickable{
                 Button {
                     id: newProfileButton
                     text: qsTr("New Profile")
-                    Layout.preferredHeight: 40
+                    Layout.preferredHeight: 50
                     Layout.preferredWidth: 147
                 }
             }
 
             RowLayout {
+                Layout.preferredWidth: 349
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
 
                 TextField {
@@ -93,7 +97,7 @@ Flickable{
                 Button {
                     id: setPathButton
                     text: qsTr("Set Path")
-                    Layout.preferredHeight: 40
+                    Layout.preferredHeight: 50
                     Layout.preferredWidth: 147
                 }
             }

@@ -7,5 +7,6 @@
         <file>LoginForm.ui.qml</file>
         <file>common/TopToolBar.qml</file>
         <file>common/TopToolBarForm.ui.qml</file>
+        <file>common/PopupToast.qml</file>
     </qresource>
 </RCC>

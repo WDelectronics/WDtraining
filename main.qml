@@ -15,9 +15,11 @@ ApplicationWindow {
     Material.accent: Material.Orange
     Material.primary: Material.DeepOrange
     Material.foreground: Material.Blue
+    property bool isLandscape: width > height
 
     Component.onCompleted: {
         loginForm.pathTextField.text = sqlManager.filePath
+        toast.start("Welcome to WD Training", 1000) //Toast pac!!
     }
 
 //    Connections{
@@ -32,7 +34,7 @@ ApplicationWindow {
     SwipeView {
         id: swipeView
         anchors.fill: parent
-        currentIndex: tabBar.currentIndex
+        //currentIndex: tabBar.currentIndex
 
         Login{
         id: loginForm
@@ -40,6 +42,13 @@ ApplicationWindow {
 
         CalenderClass{
 
+        }
+    }
+
+    PopupToast{
+        id:toast
+        onAboutToHide:{
+            swipeView.focus = true
         }
     }
 

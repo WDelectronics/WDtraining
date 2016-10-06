@@ -23,7 +23,7 @@ Flickable{
             anchors.fill: parent
 
             Image {
-                id: image1
+                id: imageWelcome
                 fillMode: Image.PreserveAspectFit
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                 Layout.preferredHeight: 191

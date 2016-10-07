@@ -11,8 +11,10 @@ Flickable{
     property alias newProfileTextField: newProfileTextField
     property alias newProfileButton: newProfileButton
     property alias setPathButton: setPathButton
+    contentHeight: loginPane.implicitHeight
 
     Pane{
+        id: loginPane
         anchors.rightMargin: 0
         anchors.bottomMargin: 0
         anchors.leftMargin: 0

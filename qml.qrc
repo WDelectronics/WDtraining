@@ -5,8 +5,8 @@
         <file>pieMenuSelect.qml</file>
         <file>Login.qml</file>
         <file>LoginForm.ui.qml</file>
-        <file>common/TopToolBar.qml</file>
-        <file>common/TopToolBarForm.ui.qml</file>
         <file>common/PopupToast.qml</file>
+        <file>common/TopTabBar.qml</file>
+        <file>common/FloatingActionButton.qml</file>
     </qresource>
 </RCC>

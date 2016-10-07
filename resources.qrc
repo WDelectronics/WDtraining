@@ -2,4 +2,7 @@
     <qresource prefix="/welcome">
         <file>Resources/Welcome pic.jpeg</file>
     </qresource>
+    <qresource prefix="/icon">
+        <file>Resources/android/drawable-mdpi/ic_fitness_center_black_24dp.png</file>
+    </qresource>
 </RCC>

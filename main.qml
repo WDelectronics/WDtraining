@@ -27,22 +27,79 @@ ApplicationWindow {
 //        onDatabaseLoadedSucessfully:
 //    }
 
-    header: TopToolBar{
+    property bool tabBarIsFixed: false
+//    header: TopTabBar{
 
-    }
+
+//    }
+    header:  titleBar
+
+    Loader {
+            id: titleBar
+            //visible: !isLandscape
+            //active: !isLandscape
+            source: "qrc:/common/TopTabBar.qml"
+            onLoaded: {
+                if(item) {
+                    item.currentIndex = swipeView.currentIndex
+                    item.text = qsTr("HowTo move from A to B")
+                }
+            }
+        }
+
+    property var tabButtonModel: [{"name": "Login"},
+                                 {"name": "Get Ready"},
+                                 {"name": "Training"},
+                                 {"name": "Lift O´Clock!"},
+                                 {"name": "Progress"}]
 
     SwipeView {
         id: swipeView
         anchors.fill: parent
-        //currentIndex: tabBar.currentIndex
+        currentIndex: 0
+        focus: true
 
-        Login{
-        id: loginForm
+        anchors.topMargin: isLandscape? 6 : 0
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.bottom: parent.bottom
+
+        onCurrentIndexChanged: {
+            titleBar.item.currentIndex = currentIndex
         }
 
-        CalenderClass{
-
+        Loader{
+            id: login
+            active: true
+            source: "qrc:/Login.qml"
+           onLoaded: item.init()
         }
+
+        Loader{
+            id:calender
+            active: true
+            source: "qrc:/CalenderClass.qml"
+            onLoaded: item.init()
+        }
+    }
+
+
+
+
+
+    FloatingActionButton{
+        id: fab
+        z: 1
+        visible: true
+        anchors.margins: 16
+        anchors.right: parent.right
+        anchors.bottom: parent.bottom
+        imageSource: "qrc:/icon/Resources/android/drawable-mdpi/ic_fitness_center_black_24dp.png"
+        backgroundColor: "blue"
+
+        onClicked: {
+                    toast.start("Take the 130 on a ride mathafacka!!", 2000)
+                }
     }
 
     PopupToast{
@@ -52,14 +109,5 @@ ApplicationWindow {
         }
     }
 
-//    footer: TabBar {
-//        id: tabBar
-//        currentIndex: swipeView.currentIndex
-//        TabButton {
-//            text: qsTr("First")
-//        }
-//        TabButton {
-//            text: qsTr("Second")
-//        }
-//    }
+
 }

@@ -5,13 +5,14 @@ import QtQuick.Layouts 1.0
 
 
 Flickable{
+    contentHeight: loginPane.implicitHeight
     property alias profilesComboBox: profilesComboBox
     property alias loadProfileButton: loadProfileButton
     property alias pathTextField: pathTextField
     property alias newProfileTextField: newProfileTextField
     property alias newProfileButton: newProfileButton
     property alias setPathButton: setPathButton
-    contentHeight: loginPane.implicitHeight
+
 
     Pane{
         id: loginPane
@@ -106,4 +107,5 @@ Flickable{
         }
 
     }
+    ScrollIndicator.vertical: ScrollIndicator { }
 }

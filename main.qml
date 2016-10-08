@@ -18,7 +18,7 @@ ApplicationWindow {
     property bool isLandscape: width > height
 
     Component.onCompleted: {
-        loginForm.pathTextField.text = sqlManager.filePath
+        login.pathTextField.text = sqlManager.filePath
         toast.start("Welcome to WD Training", 1000) //Toast pac!!
     }
 
@@ -42,7 +42,7 @@ ApplicationWindow {
             onLoaded: {
                 if(item) {
                     item.currentIndex = swipeView.currentIndex
-                    item.text = qsTr("HowTo move from A to B")
+                    item.text = qsTr("Gains O´Clock")
                 }
             }
         }
@@ -72,14 +72,14 @@ ApplicationWindow {
             id: login
             active: true
             source: "qrc:/Login.qml"
-           onLoaded: item.init()
+
         }
 
         Loader{
             id:calender
             active: true
             source: "qrc:/CalenderClass.qml"
-            onLoaded: item.init()
+
         }
     }
 
@@ -108,6 +108,10 @@ ApplicationWindow {
             swipeView.focus = true
         }
     }
+
+    function resetFocus() {
+            swipeView.focus = true
+        }
 
 
 }

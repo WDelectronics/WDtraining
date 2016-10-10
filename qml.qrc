@@ -3,10 +3,12 @@
         <file>main.qml</file>
         <file>CalenderClass.qml</file>
         <file>pieMenuSelect.qml</file>
-        <file>Login.qml</file>
-        <file>LoginForm.ui.qml</file>
         <file>common/PopupToast.qml</file>
         <file>common/TopTabBar.qml</file>
         <file>common/FloatingActionButton.qml</file>
+        <file>Menus/Login.qml</file>
+        <file>Menus/LoginForm.ui.qml</file>
+        <file>Menus/HomeMenu.qml</file>
+        <file>Menus/TrainingSetup.qml</file>
     </qresource>
 </RCC>

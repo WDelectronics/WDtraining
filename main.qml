@@ -4,6 +4,7 @@ import QtQuick.Layouts 1.0
 import QtQuick.Controls.Material 2.0
 
 import "common"
+import "Menus"
 
 ApplicationWindow {
     id: root
@@ -18,7 +19,7 @@ ApplicationWindow {
     property bool isLandscape: width > height
 
     Component.onCompleted: {
-        login.pathTextField.text = sqlManager.filePath
+        //login.pathTextField.text = sqlManager.filePath
         toast.start("Welcome to WD Training", 1000) //Toast pac!!
     }
 
@@ -27,63 +28,28 @@ ApplicationWindow {
 //        onDatabaseLoadedSucessfully:
 //    }
 
-    property bool tabBarIsFixed: false
-//    header: TopTabBar{
 
+    StackView{
+        id: stackViewRoot
+        anchors.fill: parent
+        initialItem: componentLogin
 
-//    }
-    header:  titleBar
+        Component{
+            id: componentLogin
+            Login{
+                id: logIn
+                loadProfileButton.onPressed: stackViewRoot.push(homeMenu)
+            }
+        }
+        Component{
+            id: homeMenu
+            HomeMenu{
 
-    Loader {
-            id: titleBar
-            //visible: !isLandscape
-            //active: !isLandscape
-            source: "qrc:/common/TopTabBar.qml"
-            onLoaded: {
-                if(item) {
-                    item.currentIndex = swipeView.currentIndex
-                    item.text = qsTr("Gains O´Clock")
-                }
             }
         }
 
-    property var tabButtonModel: [{"name": "Login"},
-                                 {"name": "Get Ready"},
-                                 {"name": "Training"},
-                                 {"name": "Lift O´Clock!"},
-                                 {"name": "Progress"}]
 
-    SwipeView {
-        id: swipeView
-        anchors.fill: parent
-        currentIndex: 0
-        focus: true
-
-        anchors.topMargin: isLandscape? 6 : 0
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.bottom: parent.bottom
-
-        onCurrentIndexChanged: {
-            titleBar.item.currentIndex = currentIndex
-        }
-
-        Loader{
-            id: login
-            active: true
-            source: "qrc:/Login.qml"
-
-        }
-
-        Loader{
-            id:calender
-            active: true
-            source: "qrc:/CalenderClass.qml"
-
-        }
     }
-
-
 
 
 
@@ -105,12 +71,12 @@ ApplicationWindow {
     PopupToast{
         id:toast
         onAboutToHide:{
-            swipeView.focus = true
+            stackViewRoot.focus = true
         }
     }
 
     function resetFocus() {
-            swipeView.focus = true
+            stackViewRoot.focus = true
         }
 
 

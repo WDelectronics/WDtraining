@@ -35,12 +35,12 @@ ToolBar {
         }
         Label {
             id: titleLabel
-            text: "ekke"
+            text: "WD Training"
+            font.pixelSize: 20
             Layout.fillWidth: true
             elide: Label.ElideRight
             horizontalAlignment: Qt.AlignHCenter
             verticalAlignment: Qt.AlignVCenter
-            //color: textOnPrimary
         }
         ToolButton {
             focusPolicy: Qt.NoFocus

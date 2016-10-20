@@ -25,7 +25,7 @@ StackView{
                  horizontalAlignment: Text.AlignHCenter
                  verticalAlignment: Text.AlignVCenter
              }
-          onClicked: console.log()
+          onClicked: console.log("Add data or remove")
          }
       model: ListModel{
           id: listModelMenu
@@ -49,10 +49,10 @@ StackView{
     }
 
 
-  property var componentMap: {
-      "CircularGauge": circularGauge,
+//  property var componentMap: {
+//      "CircularGauge": circularGauge,
 
-  }
+//  }
 
 
 

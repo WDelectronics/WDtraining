@@ -10,5 +10,9 @@
         <file>Menus/LoginForm.ui.qml</file>
         <file>Menus/HomeMenu.qml</file>
         <file>Menus/TrainingSetup.qml</file>
+        <file>Menus/StartMenu.qml</file>
+        <file>Menus/StartMenuForm.ui.qml</file>
+        <file>Menus/WorkoutList.qml</file>
+        <file>Dialogs/AddWorkoutDialog.qml</file>
     </qresource>
 </RCC>

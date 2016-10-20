@@ -5,6 +5,7 @@ import QtQuick.Controls.Material 2.0
 
 import "common"
 import "Menus"
+import "Dialogs"
 
 ApplicationWindow {
     id: root
@@ -38,20 +39,28 @@ ApplicationWindow {
             id: componentLogin
             Login{
                 id: logIn
-                loadProfileButton.onPressed: stackViewRoot.push(homeMenu)
+                loadProfileButton.onPressed: stackViewRoot.push(startMenu)
+                newProfileButton.onPressed: addWork.visible = true
             }
         }
         Component{
-            id: homeMenu
-            HomeMenu{
+            id: startMenu
+            StartMenu{
+                buttonNewWorkout.onPressed:{
+                    stackViewRoot.push(workout)
+
+                }
+            }
+        }
+        Component{
+            id: workout
+            WorkoutList{
+            id: worklist
 
             }
         }
 
-
     }
-
-
 
     FloatingActionButton{
         id: fab
@@ -65,6 +74,7 @@ ApplicationWindow {
 
         onClicked: {
                     toast.start("Take the 130 on a ride mathafacka!!", 2000)
+                    stackViewRoot.push(workout)
                 }
     }
 
@@ -77,6 +87,12 @@ ApplicationWindow {
 
     function resetFocus() {
             stackViewRoot.focus = true
+        }
+
+
+        AddWorkoutDialog{
+            id: addWork
+            visible: false
         }
 
 

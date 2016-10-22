@@ -14,5 +14,6 @@
         <file>Menus/StartMenuForm.ui.qml</file>
         <file>Menus/WorkoutList.qml</file>
         <file>Dialogs/AddWorkoutDialog.qml</file>
+        <file>Dialogs/SelectExcerciseDialog.qml</file>
     </qresource>
 </RCC>

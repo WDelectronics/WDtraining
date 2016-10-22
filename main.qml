@@ -57,6 +57,7 @@ ApplicationWindow {
             WorkoutList{
             id: worklist
 
+
             }
         }
 

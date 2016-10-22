@@ -8,9 +8,12 @@ import "../Dialogs"
 SwipeView {
     id: swipeViewWorkout
 
-    AddWorkoutDialog{
-        id: dialogWorkout
+    SelectExcerciseDialog{
+        id: selectExcercise
         visible: false
+        Component.onCompleted: visible = true
     }
+
+
 
 }

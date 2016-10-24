@@ -12,6 +12,8 @@ Popup {
     implicitHeight: 150
     implicitWidth: 300
 
+    property var buttonOk: buttonOk
+
     contentItem: Pane{
         focus: true
 

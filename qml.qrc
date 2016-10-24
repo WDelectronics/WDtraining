@@ -15,5 +15,6 @@
         <file>Menus/WorkoutList.qml</file>
         <file>Dialogs/AddWorkoutDialog.qml</file>
         <file>Dialogs/SelectExcerciseDialog.qml</file>
+        <file>Views/TableViewAdd.qml</file>
     </qresource>
 </RCC>

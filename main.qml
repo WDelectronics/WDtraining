@@ -6,12 +6,13 @@ import QtQuick.Controls.Material 2.0
 import "common"
 import "Menus"
 import "Dialogs"
+import "Views"
 
 ApplicationWindow {
     id: root
     visible: true
-    width: 640
-    height: 480
+    width: 400
+    height: 600
     title: qsTr("Gym Workout Log")
     Material.theme: Material.Dark
     Material.accent: Material.Orange
@@ -30,38 +31,59 @@ ApplicationWindow {
 //    }
 
 
-    StackView{
-        id: stackViewRoot
+//    StackView{
+//        id: stackViewRoot
+//        anchors.fill: parent
+//        initialItem: componentLogin
+
+//        Component{
+//            id: componentLogin
+//            Login{
+//                id: logIn
+//                loadProfileButton.onPressed: stackViewRoot.push(startMenu)
+//                newProfileButton.onPressed: addWork.visible = true
+//            }
+//        }
+//        Component{
+//            id: startMenu
+//            StartMenu{
+//                buttonNewWorkout.onPressed:{
+//                    stackViewRoot.push(workout)
+
+//                }
+//            }
+//        }
+//        Component{
+//            id: workout
+//            WorkoutList{
+//            id: worklist
+
+
+//            }
+//        }
+
+//    }
+
+    SwipeView{
+        id: swipeViewRoot
         anchors.fill: parent
-        initialItem: componentLogin
 
-        Component{
-            id: componentLogin
-            Login{
-                id: logIn
-                loadProfileButton.onPressed: stackViewRoot.push(startMenu)
-                newProfileButton.onPressed: addWork.visible = true
-            }
+        TableViewAdd{
+
         }
-        Component{
-            id: startMenu
-            StartMenu{
-                buttonNewWorkout.onPressed:{
-                    stackViewRoot.push(workout)
 
-                }
-            }
+
+        Login{
+
         }
-        Component{
-            id: workout
-            WorkoutList{
-            id: worklist
 
+        StartMenu{
 
-            }
         }
+
 
     }
+
 
     FloatingActionButton{
         id: fab
@@ -95,6 +117,7 @@ ApplicationWindow {
             id: addWork
             visible: false
         }
+
 
 
 }

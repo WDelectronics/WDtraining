@@ -104,7 +104,7 @@ ApplicationWindow {
     PopupToast{
         id:toast
         onAboutToHide:{
-            stackViewRoot.focus = true
+            //stackViewRoot.focus = true
         }
     }
 

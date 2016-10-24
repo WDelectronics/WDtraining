@@ -65,14 +65,17 @@ Page{
 
           section.property: "muscleGroup"
           section.delegate: headerDelegate
+          highlight: Rectangle{color: "lightsteelblue"; radius: 5}
+          highlightFollowsCurrentItem: true
 
       }
 
       Component{
           id: delegateRepSet
 
-          Pane{
-
+          Item{
+                width: 180
+                height: 40
               RowLayout{
                   Label{
                       text: rep + " Reps  X"
@@ -84,18 +87,35 @@ Page{
                       Layout.fillWidth: true
                       Layout.alignment: Qt.AlignHCenter
                   }
+
               }
           }
       }
 
       Component{
           id: headerDelegate
-          Label{
+
+          Item{
+          width: 180
+          height: 50
+          RowLayout{
+            Label{
+              id: labelHeader
               height: 20
               font.pixelSize: 25
               text: section
-
-          }
+              MouseArea{
+                  anchors.fill: parent
+                  onClicked: console.log(labelHeader.text)
+              }
+            }
+            Button{
+              text: "+"
+              anchors.right: parent.right
+              onPressed: console.log(listviewAdd.currentIndex)
+            }
+         }
+      }
       }
 
       ListModel{
